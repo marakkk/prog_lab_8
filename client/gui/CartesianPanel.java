@@ -169,11 +169,7 @@ public class CartesianPanel extends JPanel implements ActionListener {
                             int blue = random.nextInt(25) * 10;
                             return new Color(red, green, blue);
                         }));
-        /* ЭТО ОЧЕНЬ СТРАШНЫЙ МЕТОД
-        ОН НУЖЕН ЧТОБЫ СОСЕДНИЕ КВАДРАТЫ СДВИГАЛИСЬ
-        НО ОН РАБОТАЕТ ЗА О(n^2) а можно СПОКОЙНО написать за О(n)
-        Н-О М-Н-Е Л-Е-Н-Ь
-         */
+        
         float delta = 0.2F;
         while(response.getCollection().stream().map(Ticket::getCoordinates).distinct().count() < response.getCollection().size()){
             for(Ticket ticket : response.getCollection()){
